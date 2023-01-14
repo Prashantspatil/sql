@@ -1,10 +1,10 @@
-CREATE DATABASE festivals;
+CREATE DATABASE festival;
 
 show databases;
 
-use festivals;
+use festival;
 
-CREATE TABLE festivals(id int, fest_name varchar(15), fest_day varchar(15), fest_date date, fest_custom varchar(15), region varchar(15), god_name varchar(15), god_weapon varchar(15), place varchar(10), members int, god_vehicle varchar(10), priest_name varchar(10), temple_area varchar(15), pin_code bigint, circle_name varchar(15), fest_food varchar(15), fest_leave int, holiday_type varchar(10), fest_bonus bigint, fest_guest varchar(15))
+CREATE TABLE festivals(id int, fest_name varchar(15), fest_day varchar(15), fest_date date, fest_custom varchar(15), region varchar(15), god_name varchar(15), god_weapon varchar(15), place varchar(10), members int, god_vehicle varchar(10), priest_name varchar(10), temple_area varchar(15), pin_code bigint, circle_name varchar(15), fest_food varchar(15), fest_leave int, holiday_type varchar(10), fest_bonus bigint, fest_guest varchar(15));
 
 SELECT * FROM  festivals;
 
@@ -58,4 +58,57 @@ INSERT INTO festivals VALUES(47, 'deepavali', 'monday', '2022-10-01', 'lakshmi p
 INSERT INTO festivals VALUES(48, 'deepavali', 'monday', '2022-10-01', 'lakshmi pooja', 'south', 'lakshmi', 'lotus', 'shahapur', 1, 'no vehicle', 'rudra', 'basava', 585223, 'basava', 'ladu', 3, 'general', 5000, 'family'); 
 INSERT INTO festivals VALUES(49, 'deepavali', 'monday', '2022-10-01', 'lakshmi pooja', 'south', 'lakshmi', 'lotus', 'shahapur', 1, 'no vehicle', 'rudra', 'basava', 585223, 'basava', 'ladu', 3, 'general', 5000, 'family'); 
 INSERT INTO festivals VALUES(50, 'deepavali', 'monday', '2022-10-01', 'lakshmi pooja', 'south', 'lakshmi', 'lotus', 'shahapur', 1, 'no vehicle', 'rudra', 'basava', 585223, 'basava', 'ladu', 3, 'general', 5000, 'family'); 
-select count(*) from festivals;
+SELECT count(*) from festivals;
+
+CREATE TABLE movies(id int, lang varchar(20), movie_name varchar(20), actor varchar(20), producer varchar(20), banner varchar(20), budget bigint, director varchar(20), days bigint, mov_release date, comedian varchar(20));
+SELECT * FROM movies;
+DESC movies;
+ALTER TABLE movies ADD COLUMN ott varchar(10) default 'netflix';
+ALTER TABLE movies MODIFY COLUMN id bigint, MODIFY COLUMN budget int, MODIFY COLUMN days int;
+ALTER TABLE movies RENAME COLUMN id to ser_no, RENAME COLUMN lang to language, RENAME COLUMN movie_name to title, RENAME COLUMN actor to lead_actor, RENAME COLUMN banner to company;
+ALTER TABLE movies DROP COLUMN comedian;
+INSERT INTO movies VALUES(1,'kannada','kantata','rishabh','vijay','homabale',10,'rishabh',100,'2022-11-10','amazon');
+INSERT INTO movies VALUES(2,'kannada','kgf-1','yash','ajay','qomabale',20,'qishabh',200,'2022-12-10','netflix');
+INSERT INTO movies VALUES(3,'kannada','kgf-2','yash','sujay','womabale',30,'wishabh',300,'2022-01-10','sony');
+INSERT INTO movies VALUES(4,'kannada','kranti','darshan','tujay','homabale',40,'eishabh',400,'2022-02-10','zee');
+INSERT INTO movies VALUES(5,'kannada','charlie','rakshit','mijay','qomabale',50,'rishabh',500,'2022-03-10','hotstar');
+INSERT INTO movies VALUES(6,'kannada','ggvv','raj','pijay','aomabale',60,'ishabh',600,'2022-04-10','amazon');
+INSERT INTO movies VALUES(7,'kannada','abc','uppi','oijay','xomabale',70,'risabh',700,'2022-05-10','netflix');
+INSERT INTO movies VALUES(8,'kannada','aaa','sunil','qijay','momabale',80,'rishah',800,'2022-06-10','amazon');
+INSERT INTO movies VALUES(9,'kannada','qqq','ajay','wijay','lomabale',90,'rishab',900,'2022-07-10','netflix');
+INSERT INTO movies VALUES(10,'kannada','www','vijay','eijay','qomabale',11,'rihabh',101,'2022-08-10','zee');
+INSERT INTO movies VALUES(11,'kannada','eee','prashant','rijay','aomabale',12,'zishabh',102,'2022-09-10','amazon');
+INSERT INTO movies VALUES(12,'kannada','rrr','rudra','tijay','somabale',13,'xishabh',103,'2022-10-11','sony');
+INSERT INTO movies VALUES(13,'kannada','ttt','jagadeesh','yijay','jomabale',14,'cishabh',104,'2022-10-12','hotstar');
+INSERT INTO movies VALUES(14,'kannada','yyy','jaideep','uijay','gomabale',15,'vishabh',105,'2022-10-13','amazon');
+INSERT INTO movies VALUES(15,'kannada','uuu','vinay','iijay','fomabale',16,'bishabh',106,'2022-10-14','netflix');
+INSERT INTO movies VALUES(16,'kannada','iii','harish','aijay','momabale',17,'nishabh',107,'2022-10-15','zee');
+INSERT INTO movies VALUES(17,'kannada','ooo','mallan','sijay','nomabale',18,'mishabh',108,'2022-10-16','hotstar');
+INSERT INTO movies VALUES(18,'kannada','ppp','abhi','dijay','bomabale',19,'aishabh',109,'2022-10-17','amazon');
+INSERT INTO movies VALUES(19,'kannada','aaa','pooja','fijay','hoomabale',21,'sishabh',100,'2022-10-18','netflix');
+INSERT INTO movies VALUES(20,'kannada','sss','shruti','gijay','vomabale',2,'dishabh',120,'2022-10-19','amazon');
+INSERT INTO movies VALUES(21,'kannada','ddd','bharat','hijay','hcomabale',23,'fishabh',130,'2022-10-20','sony');
+INSERT INTO movies VALUES(22,'kannada','fff','pavan','jijay','xomabale',23,'gishabh',110,'2022-10-21','zee');
+INSERT INTO movies VALUES(23,'kannada','ggg','sharan','kijay','zomabale',44,'hishabh',140,'2022-10-22','amazon');
+INSERT INTO movies VALUES(24,'kannada','hhh','soma','lijay','lomabale',55,'jishabh',150,'2022-10-23','netflix');
+INSERT INTO movies VALUES(25,'kannada','jjj','lokesh','zijay','komabale',66,'kishabh',160,'2022-10-24','zee');
+INSERT INTO movies VALUES(26,'kannada','kkk','om','xijay','jomabale',77,'lishabh',170,'2022-10-25','hotstar');
+INSERT INTO movies VALUES(27,'kannada','lll','akshar','cijay','hhomabale',88,'qrishabh',180,'2022-10-26','amazon');
+INSERT INTO movies VALUES(28,'kannada','zzz','yogesh','vvijay','gomabale',99,'wrishabh',190,'2022-10-27','sony');
+INSERT INTO movies VALUES(29,'kannada','xxx','mahesh','bijay','fomabale',98,'erishabh',200,'2022-10-28','zee');
+INSERT INTO movies VALUES(30,'kannada','ccc','vishnu','nijay','domabale',97,'rrishabh',300,'2022-10-29','netflix');
+INSERT INTO movies VALUES(31,'kannada','vvv','raj','mijay','somabale',96,'trishabh',400,'2022-10-30','amazon');
+INSERT INTO movies VALUES(32,'kannada','bbb','punith','qvijay','aomabale',95,'yrishabh',500,'2022-10-31','sony');
+INSERT INTO movies VALUES(33,'kannada','nnn','shivanna','wvijay','pomabale',94,'jrishabh',600,'2021-10-10','zee');
+INSERT INTO movies VALUES(34,'kannada','mmm','krishna','evijay','oomabale',93,'rrishabh',700,'2023-10-10','amazon');
+INSERT INTO movies VALUES(35,'kannada','kotigobba','sudeep','rvijay','iomabale',92,'erishabh',800,'2019-10-10','netflix');
+INSERT INTO movies VALUES(36,'kannada','yajamana','pramod','tvijay','uomabale',91,'wrishabh',900,'2018-10-10','amazon');
+INSERT INTO movies VALUES(37,'kannada','appaji','rashmika','yvijay','yomabale',81,'qrishabh',110,'2017-10-10','sony');
+INSERT INTO movies VALUES(38,'kannada','amma','prema','uvijay','tomabale',82,'arishabh',120,'2016-10-10','zee');
+INSERT INTO movies VALUES(39,'kannada','anna','vajramuni','ivijay','romabale',83,'nrishabh',130,'2015-10-10','amazon');
+INSERT INTO movies VALUES(40,'kannada','pataki','sudheer','ovijay','eomabale',84,'mrishabh',140,'2014-10-10','netflix');
+ALTER TABLE movies ADD COLUMN multi_star int default 5;
+ALTER TABLE movies MODIFY COLUMN ser_no int, MODIFY COLUMN budget bigint, MODIFY COLUMN days bigint;
+ALTER TABLE movies RENAME COLUMN ser_no to num, RENAME COLUMN language to bhashe, RENAME COLUMN title to movie_title, RENAME COLUMN lead_actor to protogonist, RENAME COLUMN company to production;
+ALTER TABLE movies DROP COLUMN director;
+SELECT count(*) from movies;
