@@ -63,10 +63,10 @@ SELECT count(*) from festivals;
 CREATE TABLE movies(id int, lang varchar(20), movie_name varchar(20), actor varchar(20), producer varchar(20), banner varchar(20), budget bigint, director varchar(20), days bigint, mov_release date, comedian varchar(20));
 SELECT * FROM movies;
 DESC movies;
-ALTER TABLE movies ADD COLUMN ott varchar(10) default 'netflix';
+/*ALTER TABLE movies ADD COLUMN ott varchar(10) default 'netflix';
 ALTER TABLE movies MODIFY COLUMN id bigint, MODIFY COLUMN budget int, MODIFY COLUMN days int;
 ALTER TABLE movies RENAME COLUMN id to ser_no, RENAME COLUMN lang to language, RENAME COLUMN movie_name to title, RENAME COLUMN actor to lead_actor, RENAME COLUMN banner to company;
-ALTER TABLE movies DROP COLUMN comedian;
+ALTER TABLE movies DROP COLUMN comedian;*/
 INSERT INTO movies VALUES(1,'kannada','kantata','rishabh','vijay','homabale',10,'rishabh',100,'2022-11-10','amazon');
 INSERT INTO movies VALUES(2,'kannada','kgf-1','yash','ajay','qomabale',20,'qishabh',200,'2022-12-10','netflix');
 INSERT INTO movies VALUES(3,'kannada','kgf-2','yash','sujay','womabale',30,'wishabh',300,'2022-01-10','sony');
@@ -107,8 +107,64 @@ INSERT INTO movies VALUES(37,'kannada','appaji','rashmika','yvijay','yomabale',8
 INSERT INTO movies VALUES(38,'kannada','amma','prema','uvijay','tomabale',82,'arishabh',120,'2016-10-10','zee');
 INSERT INTO movies VALUES(39,'kannada','anna','vajramuni','ivijay','romabale',83,'nrishabh',130,'2015-10-10','amazon');
 INSERT INTO movies VALUES(40,'kannada','pataki','sudheer','ovijay','eomabale',84,'mrishabh',140,'2014-10-10','netflix');
-ALTER TABLE movies ADD COLUMN multi_star int default 5;
+/*ALTER TABLE movies ADD COLUMN multi_star int default 5;
 ALTER TABLE movies MODIFY COLUMN ser_no int, MODIFY COLUMN budget bigint, MODIFY COLUMN days bigint;
 ALTER TABLE movies RENAME COLUMN ser_no to num, RENAME COLUMN language to bhashe, RENAME COLUMN title to movie_title, RENAME COLUMN lead_actor to protogonist, RENAME COLUMN company to production;
 ALTER TABLE movies DROP COLUMN director;
 SELECT count(*) from movies;
+SELECT num,movie_title,protogonist FROM movies WHERE ott = 'netflix';*/
+
+/*UPDATE movies SET actor='ravishankar' where id=10;
+UPDATE movies SET actor='mallan' where id=1;
+UPDATE movies SET actor='abhishek' where id=2;
+UPDATE movies SET actor='devaraj' where id=3;
+UPDATE movies SET actor='ambrish puri' where id=4;
+UPDATE movies SET actor='om puri' where id=5;
+UPDATE movies SET actor='shakti kapoor' where id=6;
+UPDATE movies SET actor='saikumar' where id=7;
+UPDATE movies SET actor='nasiruddin shah' where id=8;
+UPDATE movies SET actor='ayyappa' where id=9;
+
+SELECT * from movies where id=1;
+SELECT * from movies where actor='ayyappa';
+SELECT * from movies where days=900;
+SELECT * from movies where mov_release='2022-11-10';
+SELECT * from movies where producer='vijay';
+SELECT * from movies where banner='hombale';
+SELECT * from movies where budget=10;
+SELECT * from movies where director='rishabh';
+SELECT * from movies where lang='kannada';
+SELECT * from movies where movie_name='kantara';
+
+SELECT * from movies where id=1 and actor='mallan';
+SELECT * from movies where lang='kannada' and movie_name='kantara';
+SELECT * from movies where budget=10 and director='rishabh';
+SELECT * from movies where producer='vijay' and banner='hombale';
+SELECT * from movies where days=100 and mov_release='2022-11-10';
+
+SELECT * from movies where id=1 or movie_name='pataki';
+SELECT * from movies where actor='rashmika' or movie_name='kantara';
+SELECT * from movies where budget=90 or actor='vijay';
+SELECT * from movies where producer='vijay' or banner='hombale';
+SELECT * from movies where days=140 or mov_release='2022-11-10';
+
+SELECT *from movies commit;
+select *from movies where actor='prema';*/
+
+SELECT * FROM movies where id in(36,37,38,39,40);
+SELECT * FROM movies where id in(26,27,28,29,30);
+SELECT * FROM movies where id in(16,17,18,19,20);
+SELECT * FROM movies where id in(6,7,8,9,10);
+SELECT * FROM movies where id in(21,22,23,24,25);
+
+SELECT * FROM movies where id not in(36,37,38,39,40);
+SELECT * FROM movies where id not in(26,27,28,29,30);
+SELECT * FROM movies where id not in(16,17,18,19,20);
+SELECT * FROM movies where id not in(6,7,8,9,10);
+SELECT * FROM movies where id not in(21,22,23,24,25);
+
+select * from movies where id between 1 and 10;
+select * from movies where id between 11 and 20;
+select * from movies where id between 21 and 30;
+select * from movies where id between 31 and 40;
+select * from movies where id between 15 and 25;

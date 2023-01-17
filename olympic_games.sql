@@ -86,3 +86,7 @@ ALTER TABLE highways MODIFY COLUMN length bigint, MODIFY COLUMN ser_no bigint, M
 ALTER TABLE highways RENAME COLUMN ser_no to num, RENAME COLUMN duration to time, RENAME COLUMN init_state to starting_point, RENAME COLUMN end_state to ending_point, RENAME COLUMN service_road to lay_bay;
 ALTER TABLE highways DROP COLUMN guest;
 SELECT count(*) from highways;
+
+select * from highways where num not in(11,12,13);
+
+select * from highways where num between 15 and 19;
