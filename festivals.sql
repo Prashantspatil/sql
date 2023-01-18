@@ -4,7 +4,7 @@ show databases;
 
 use festival;
 
-CREATE TABLE festivals(id int, fest_name varchar(15), fest_day varchar(15), fest_date date, fest_custom varchar(15), region varchar(15), god_name varchar(15), god_weapon varchar(15), place varchar(10), members int, god_vehicle varchar(10), priest_name varchar(10), temple_area varchar(15), pin_code bigint, circle_name varchar(15), fest_food varchar(15), fest_leave int, holiday_type varchar(10), fest_bonus bigint, fest_guest varchar(15));
+/*CREATE TABLE festivals(id int, fest_name varchar(15), fest_day varchar(15), fest_date date, fest_custom varchar(15), region varchar(15), god_name varchar(15), god_weapon varchar(15), place varchar(10), members int, god_vehicle varchar(10), priest_name varchar(10), temple_area varchar(15), pin_code bigint, circle_name varchar(15), fest_food varchar(15), fest_leave int, holiday_type varchar(10), fest_bonus bigint, fest_guest varchar(15));
 
 SELECT * FROM  festivals;
 
@@ -67,7 +67,7 @@ DESC movies;
 ALTER TABLE movies MODIFY COLUMN id bigint, MODIFY COLUMN budget int, MODIFY COLUMN days int;
 ALTER TABLE movies RENAME COLUMN id to ser_no, RENAME COLUMN lang to language, RENAME COLUMN movie_name to title, RENAME COLUMN actor to lead_actor, RENAME COLUMN banner to company;
 ALTER TABLE movies DROP COLUMN comedian;*/
-INSERT INTO movies VALUES(1,'kannada','kantata','rishabh','vijay','homabale',10,'rishabh',100,'2022-11-10','amazon');
+/*INSERT INTO movies VALUES(1,'kannada','kantata','rishabh','vijay','homabale',10,'rishabh',100,'2022-11-10','amazon');
 INSERT INTO movies VALUES(2,'kannada','kgf-1','yash','ajay','qomabale',20,'qishabh',200,'2022-12-10','netflix');
 INSERT INTO movies VALUES(3,'kannada','kgf-2','yash','sujay','womabale',30,'wishabh',300,'2022-01-10','sony');
 INSERT INTO movies VALUES(4,'kannada','kranti','darshan','tujay','homabale',40,'eishabh',400,'2022-02-10','zee');
@@ -151,7 +151,7 @@ SELECT * from movies where days=140 or mov_release='2022-11-10';
 SELECT *from movies commit;
 select *from movies where actor='prema';*/
 
-SELECT * FROM movies where id in(36,37,38,39,40);
+/*SELECT * FROM movies where id in(36,37,38,39,40);
 SELECT * FROM movies where id in(26,27,28,29,30);
 SELECT * FROM movies where id in(16,17,18,19,20);
 SELECT * FROM movies where id in(6,7,8,9,10);
@@ -167,4 +167,112 @@ select * from movies where id between 1 and 10;
 select * from movies where id between 11 and 20;
 select * from movies where id between 21 and 30;
 select * from movies where id between 31 and 40;
-select * from movies where id between 15 and 25;
+select * from movies where id between 15 and 25;*/
+
+/*select * from movies where movie_name like 'k%';
+select * from movies where movie_name like '%e';
+select * from movies where movie_name like '%q%';
+
+select upper(director) from movies;
+select lower(banner) from movies;
+
+select concat('XWORKZ','ODC');
+select concat(movie_name,director) as film_info from movies;
+
+select instr('XWORKZODC','R') as position;
+select instr(movie_name,'r') as position from movies;
+select instr(movie_name,'r'),movie_name from movies;
+
+select substr('bengaluru',4,7);
+select substr(movie_name,3,6),movie_name from movies;
+
+select distinct(comedian) from movies;
+select distinct(days) from movies;*/
+
+create table currency(id int, country varchar(20), currency_name varchar(20), exchange_rate int, central_bank varchar(20), pm varchar(20), continent varchar(20), currency_material varchar(20), capital varchar(20), fm varchar(20));
+select * from currency;
+
+insert into currency values(1, 'india', 'indian rupee', 83, 'reserve bank', 'narendra modi', 'asia', 'cotton', 'new delhi', 'nirmala sitaraman');
+insert into currency values(2, 'pakistan', 'pakistani rupee', 229, 'state bank', 'shehbaz sharif', 'asia', 'copper', 'islamabad', 'sautul quran');
+insert into currency values(3, 'bangladesh', 'bangladeshi taka', 106, 'bangladesh bank', 'sheikh hasina', 'asia', 'paper', 'dhakka', 'mustafa kamal');
+insert into currency values(4, 'bhutan', 'bhutanese ngultrum', 81, 'royal monetry', 'lotay tshering', 'asia', 'coin', 'thimphu', 'namgay tshering');
+insert into currency values(5, 'nepal', 'nepalese rupee', 129, 'rastra bank', 'pushpa kamal dahal', 'asia', 'paper', 'kathmandu', 'bishnu prasad paudel');
+insert into currency values(6, 'afghanistan', 'afghan afghani', 90, 'afghanistan bank', 'hibatullah akhundzada', 'asia', 'paper', 'kabul', 'gul agha ishakzai');
+insert into currency values(7, 'sri lanka', 'sri lankan rupee', 364, 'central bank', 'dinesh gunawardena', 'asia', 'plymer', 'colombo', 'ranil wickremesinghe');
+insert into currency values(8, 'myanmar', 'myanmar kyat', 2099, 'cental bank', 'aung san suu kyi', 'asia', 'paper', 'naypyidaw', 'soe win');
+insert into currency values(9, 'america', 'u s dollars', 1, 'federal reserve', 'joe biden', 'north america', 'paper', 'washington dc', 'janet yellen');
+insert into currency values(10, 'australia', 'australian dollar', 2, 'reserve bank', 'anthony albanese', 'australia', 'polymer', 'canberra', 'katy gallagher');
+insert into currency values(11, 'russia', 'russian rubel', 69, 'cental bank', 'mikhail mishustin', 'europe', 'cotton', 'moscow', 'anton siluanov');
+insert into currency values(12, 'china', 'chinese yuan', 7, 'peoples bank', 'li keqiang', 'asia', 'coins', 'beijing', 'liu kun');
+insert into currency values(13, 'germany', 'euro', 1, 'deutsche bundesbank', 'olaf scholz', 'europe', 'papiemark', 'berlin', 'christian lindner');
+insert into currency values(14, 'ukraine', 'ukrainian hryvnia', 37, 'national bank', 'denys shmyhal', 'asia', 'coins', 'kyiv', 'sergii marchenko');
+insert into currency values(15, 'poland', 'polish zloty', 4, 'narodowy bank', 'mateusz morawiecki', 'asia', 'coins', 'warsaw', 'teresa czerwinska');
+insert into currency values(16, 'france', 'euro', 1, 'banque de france', 'elisabeth borne', 'asia', 'coins', 'paris', 'bruno le maire');
+insert into currency values(17, 'argentina', 'argentino peso', 183, 'cental bank', 'mauricio macri', 'south america', 'paper', 'buenos aires', 'sergio massa');
+insert into currency values(18, 'portugal', 'euro', 1, 'banco de portugal', 'antonio costa', 'europe', 'coins', 'lisbon', 'mario centeno');
+insert into currency values(19, 'england', 'pound', 1, 'bank of england', 'rishi sunak', 'europe', 'polymer', 'london', 'rishi sunak');
+insert into currency values(20, 'vietnam', 'vietnamese dong', 23, 'state bank', 'pham minh chinh', 'asia', 'polymer', 'hanoi', 'ta anh tuan');
+
+UPDATE currency SET country='bharat' where id=1;
+UPDATE currency SET central_bank='nepal rastra bank' where id=5;
+UPDATE currency SET continent='europe' where id=15;
+UPDATE currency SET continent='europe' where id=14;
+UPDATE currency SET continent='europe' where id=16;
+
+delete from currency where country='vietnam';
+delete from currency where fm='rishi sunak';
+delete from currency where capital='lisbon';
+
+select * from currency where central_bank like 'p%';
+select * from currency where currency_name like '%e';
+select * from currency where capital like '%q%';
+select * from currency where continent like '%s%';
+select * from currency where pm like '%b%';
+
+select * from currency where id between 1 and 3;
+select * from currency where id between 4 and 6;
+select * from currency where id between 7 and 12;
+select * from currency where id between 13 and 16;
+select * from currency where id between 17 and 19;
+
+select upper(country) from currency;
+select upper(pm) from currency;
+select upper(fm) from currency;
+select upper(continent) from currency;
+select upper(capital) from currency;
+
+select lower(currency_name) from currency;
+select lower(currency_material) from currency;
+select lower(central_bank) from currency;
+select lower(pm) from currency;
+select lower(fm) from currency;
+
+select concat(pm,fm) as pm_fm from currency;
+select concat(country,capital) as count_cap from currency;
+select concat(continent,currency_name) as cont_cur from currency;
+select concat(fm,pm) as fm_pm from currency;
+select concat(central_bank,fm) as bank_fm from currency;
+
+select instr(pm,'r'), pm from currency;
+select instr(country,'a'), country from currency;
+select instr(continent,'s'), continent from currency;
+select instr(fm,'o'), fm from currency;
+select instr(central_bank,'i'), central_bank from currency;
+
+select substr(pm,2,5), pm from currency;
+select substr(country,1,4), country from currency;
+select substr(continent,3,7), continent from currency;
+select substr(fm,2,6), fm from currency;
+select substr(central_bank,3,8), central_bank from currency;
+
+SELECT * FROM currency where id in(1,3,8,9,4);
+SELECT * FROM currency where id in(6,7,8,9,3);
+SELECT * FROM currency where id in(1,7,8,9,20);
+SELECT * FROM currency where id in(6,7,8,9,10);
+SELECT * FROM currency where id in(1,2,3,4,5);
+
+SELECT * FROM currency where id not in(6,7,8,9,10);
+SELECT * FROM currency where id not in(2,3,4);
+SELECT * FROM currency where id not in(16,17,18);
+SELECT * FROM currency where id not in(13,14,15);
+SELECT * FROM currency where id not in(5);
