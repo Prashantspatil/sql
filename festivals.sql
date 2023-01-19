@@ -213,7 +213,7 @@ insert into currency values(18, 'portugal', 'euro', 1, 'banco de portugal', 'ant
 insert into currency values(19, 'england', 'pound', 1, 'bank of england', 'rishi sunak', 'europe', 'polymer', 'london', 'rishi sunak');
 insert into currency values(20, 'vietnam', 'vietnamese dong', 23, 'state bank', 'pham minh chinh', 'asia', 'polymer', 'hanoi', 'ta anh tuan');
 
-UPDATE currency SET country='bharat' where id=1;
+/*UPDATE currency SET country='bharat' where id=1;
 UPDATE currency SET central_bank='nepal rastra bank' where id=5;
 UPDATE currency SET continent='europe' where id=15;
 UPDATE currency SET continent='europe' where id=14;
@@ -275,4 +275,25 @@ SELECT * FROM currency where id not in(6,7,8,9,10);
 SELECT * FROM currency where id not in(2,3,4);
 SELECT * FROM currency where id not in(16,17,18);
 SELECT * FROM currency where id not in(13,14,15);
-SELECT * FROM currency where id not in(5);
+SELECT * FROM currency where id not in(5);*/
+
+select count(*) from currency;
+select count(country) from currency;
+
+select sum(pm) from currency;
+select sum(exchange_rate) from currency;
+
+select max(exchange_rate) from currency;
+
+select min(exchange_rate) from currency;
+
+select avg(exchange_rate) from currency;
+
+create table cric_info(id int, cric_type enum('odi','test','t20'), overs int, location varchar(20));
+select * from cric_info;
+
+insert into cric_info values(1, 'odi', 50, 'bengaluru');
+insert into cric_info values(1, 2, 90, 'hyderabad');
+insert into cric_info values(1, 2, 20, 'mumbai');
+
+select length(currency_name)as currencies from currency;
